@@ -33,6 +33,7 @@ public class ListNode {
             ret.append( cur.val + "-> ");
             cur = cur.next;
         }
+        ret.append("null");
 
         return ret.toString();
     }
