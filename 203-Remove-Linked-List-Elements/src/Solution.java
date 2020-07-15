@@ -48,7 +48,7 @@ class Solution {
 //        }
 
         //!!!! 上面的if中的逻辑是循环的，所以把if改成while！！！！！
-        while ( head.val == val && head != null) {
+        while (head.val == val && head != null) {
             head = head.next;  //这个方法是简单写，因为leetcode里提交忽略了loitering object
         }
 
@@ -68,5 +68,41 @@ class Solution {
             }
         }
         return head;
+    }
+
+    //解法三  使用递归，链表的天然递归性
+    public ListNode removeElements3(ListNode head, int val) {
+
+        if (head == null) {
+            return null;
+        }
+        //递归体写法一
+//        ListNode res = removeElements3(head.next, val);
+//        if (head.val == val) {
+//            return res;
+//        } else {
+//            head.next = res;
+//            return head;
+//        }
+
+        //另一种递归体写法：
+//        head.next = removeElements3(head.next, val);
+//        if (head.val == val) {
+//            return head.next; //返回删除了头节点之后的部分，可以表达成
+//        }else {
+//            return head; //直接返回传入的参数，不做删除
+//        }
+
+        //另一种写法
+        if (head.val == val) {
+            return removeElements3(head.next, val);
+        } else {
+            head.next = removeElements3(head.next, val);
+            return head;
+        }
+
+        //或者直接三目运算
+//        head.next = removeElements3(head.next, val);
+//        return head.val == val ? head.next : head;
     }
 }

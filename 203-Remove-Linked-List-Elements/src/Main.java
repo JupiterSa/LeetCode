@@ -7,8 +7,10 @@ public class Main {
         ListNode listNode = new ListNode(nums);
 
         Solution solution = new Solution();
-        System.out.println(solution.removeElements(listNode,6));
-        System.out.println(solution.removeElements2(listNode,3));
+
+        int[] aa = {1,2,6,3,4,5,6};
+        ListNode listNodeLinkedLIst = new ListNode(nums);
+        System.out.println(solution.removeElements3(listNodeLinkedLIst,6));
 
     }
 }
