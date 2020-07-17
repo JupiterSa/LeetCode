@@ -30,12 +30,11 @@ public class ListNode {
 
         ListNode cur = this; //从当前节点开始循环
         while (cur != null) {
-            ret.append( cur.val + "-> ");
+            ret.append( cur.val + " -> ");
             cur = cur.next;
         }
         ret.append("null");
 
         return ret.toString();
     }
-
 }
